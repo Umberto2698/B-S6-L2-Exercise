@@ -18,7 +18,7 @@ public class AuthorService {
 
     public Author save(Author author) {
         author.setId(UUID.randomUUID());
-        author.setAvatar("https://www.google.com/url?q=https://ui-avatars.com/api/?name%3DMario%2BRossi&sa=D&source=editors&ust=1699365783132181&usg=AOvVaw2Et-pcRRuu4r-mN8n2_iDJ");
+        author.setAvatar("https://ui-avatars.com/api/?name=" + author.getName() + "+" + author.getSurname());
         this.authorList.add(author);
         return author;
     }
@@ -41,6 +41,7 @@ public class AuthorService {
         Author found = null;
         for (Author author : authorList) {
             if (author.getId() == id) {
+                found.setId(id);
                 found.setBirthday(body.getBirthday());
                 found.setName(body.getName());
                 found.setSurname(body.getSurname());
