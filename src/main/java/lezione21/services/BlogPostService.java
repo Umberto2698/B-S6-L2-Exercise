@@ -46,7 +46,7 @@ public class BlogPostService {
                 found = blogPost;
                 found.setId(id);
                 found.setReadingTime(body.getReadingTime());
-                found.setCover(body.getCover());
+                found.setCover(blogPost.getCover());
                 found.setTitle(body.getTitle());
                 found.setContent(body.getContent());
                 found.setCategory(body.getCategory());

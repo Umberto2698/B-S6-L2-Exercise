@@ -47,7 +47,7 @@ public class AuthorService {
                 found.setName(body.getName());
                 found.setSurname(body.getSurname());
                 found.setEmail(body.getEmail());
-                found.setAvatar(body.getAvatar());
+                found.setAvatar("https://ui-avatars.com/api/?name=" + body.getName() + "+" + body.getSurname());
             }
         }
         if (found != null) {
