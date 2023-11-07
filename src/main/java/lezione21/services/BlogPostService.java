@@ -1,7 +1,7 @@
-package services;
+package lezione21.services;
 
-import enteties.BlogPost;
-import exceptions.ItemoNotFoundException;
+import lezione21.enteties.BlogPost;
+import lezione21.exceptions.ItemoNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -27,8 +27,8 @@ public class BlogPostService {
 
     public BlogPost getById(UUID id) {
         BlogPost blogPost = null;
-        for (BlogPost b : blogPostList) {
-            if (b.getId() == id) {
+        for (BlogPost b : this.blogPostList) {
+            if (b.getId().compareTo(id) == 0) {
                 blogPost = b;
             }
         }
@@ -41,8 +41,9 @@ public class BlogPostService {
 
     public BlogPost update(UUID id, BlogPost body) {
         BlogPost found = null;
-        for (BlogPost blogPost : blogPostList) {
-            if (blogPost.getId() == id) {
+        for (BlogPost blogPost : this.blogPostList) {
+            if (blogPost.getId().compareTo(id) == 0) {
+                found = blogPost;
                 found.setId(id);
                 found.setReadingTime(body.getReadingTime());
                 found.setCover(body.getCover());
@@ -59,6 +60,6 @@ public class BlogPostService {
     }
 
     public void delete(UUID id) {
-        blogPostList.removeIf(blogPost -> blogPost.getId() == id);
+        this.blogPostList.removeIf(blogPost -> blogPost.getId().compareTo(id) == 0);
     }
 }

@@ -1,10 +1,10 @@
-package controllers;
+package lezione21.controllers;
 
 
-import enteties.Author;
+import lezione21.enteties.Author;
+import lezione21.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import services.AuthorService;
 
 import java.util.List;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package exceptions;
+package lezione21.exceptions;
 
 import java.util.UUID;
 

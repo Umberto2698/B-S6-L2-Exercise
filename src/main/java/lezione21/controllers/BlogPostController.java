@@ -1,9 +1,9 @@
-package controllers;
+package lezione21.controllers;
 
-import enteties.BlogPost;
+import lezione21.enteties.BlogPost;
+import lezione21.services.BlogPostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import services.BlogPostService;
 
 import java.util.List;
 import java.util.UUID;

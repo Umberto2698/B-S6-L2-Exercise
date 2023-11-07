@@ -1,4 +1,4 @@
-package enteties;
+package lezione21.enteties;
 
 import lombok.Getter;
 import lombok.Setter;

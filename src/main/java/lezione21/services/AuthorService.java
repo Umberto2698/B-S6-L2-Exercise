@@ -1,7 +1,7 @@
-package services;
+package lezione21.services;
 
-import enteties.Author;
-import exceptions.ItemoNotFoundException;
+import lezione21.enteties.Author;
+import lezione21.exceptions.ItemoNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,8 +25,8 @@ public class AuthorService {
 
     public Author getById(UUID id) {
         Author author = null;
-        for (Author a : authorList) {
-            if (a.getId() == id) {
+        for (Author a : this.authorList) {
+            if (a.getId().compareTo(id) == 0) {
                 author = a;
             }
         }
@@ -39,8 +39,9 @@ public class AuthorService {
 
     public Author update(UUID id, Author body) {
         Author found = null;
-        for (Author author : authorList) {
-            if (author.getId() == id) {
+        for (Author author : this.authorList) {
+            if (author.getId().compareTo(id) == 0) {
+                found = author;
                 found.setId(id);
                 found.setBirthday(body.getBirthday());
                 found.setName(body.getName());
@@ -57,6 +58,6 @@ public class AuthorService {
     }
 
     public void delete(UUID id) {
-        authorList.removeIf(author -> author.getId() == id);
+        this.authorList.removeIf(author -> author.getId().compareTo(id) == 0);
     }
 }
