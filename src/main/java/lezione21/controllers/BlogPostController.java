@@ -35,7 +35,7 @@ public class BlogPostController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteBlogPost(UUID id) {
+    public void deleteBlogPost(@PathVariable UUID id) {
         blogPostService.delete(id);
     }
 }
