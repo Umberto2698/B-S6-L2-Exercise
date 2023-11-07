@@ -13,7 +13,7 @@ import java.util.UUID;
 public class BlogPostService {
     private List<BlogPost> blogPostList = new ArrayList<>();
 
-    public List<BlogPost> getAllAuthor() {
+    public List<BlogPost> getAllBlogPost() {
         return this.blogPostList;
     }
 
